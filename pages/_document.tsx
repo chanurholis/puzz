@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { AppType } from 'next/app';
+
 import Document, {
   Html,
   Head,
@@ -7,10 +9,11 @@ import Document, {
   DocumentProps,
   DocumentContext,
 } from 'next/document';
+
 import createEmotionServer from '@emotion/server/create-instance';
-import { AppType } from 'next/app';
-import theme, { roboto } from '../src/theme';
-import createEmotionCache from '../src/createEmotionCache';
+
+import theme, { roboto } from '@styles/theme';
+import createEmotionCache from '@styles/createEmotionCache';
 import { MyAppProps } from './_app';
 
 interface MyDocumentProps extends DocumentProps {
