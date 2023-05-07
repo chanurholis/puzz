@@ -50,9 +50,9 @@ const Blog = () => {
               <FeaturedPost key={post?.title} post={post} />
             ))}
           </Grid>
-          <Grid container spacing={5} sx={{ mt: 3 }}>
+          {/* <Grid container spacing={5} sx={{ mt: 3 }}>
             <ListArticle header="Articles" articles={articles} />
-          </Grid>
+          </Grid> */}
         </main>
       </Container>
       <Footer
