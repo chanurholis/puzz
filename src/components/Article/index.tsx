@@ -20,10 +20,8 @@ interface ArticleProps {
 const Article = (props: ArticleProps) => {
   const { article } = props;
 
-  console.log(article?.media);
-
   return (
-    <Grid item xs={12} md={6}>
+    <Grid item xs={12} md={12}>
       <CardActionArea component="a" href="#">
         <Card sx={{ display: 'flex' }}>
           <CardContent sx={{ flex: 1 }}>
@@ -43,7 +41,7 @@ const Article = (props: ArticleProps) => {
           <CardMedia
             component="img"
             sx={{ width: 160, display: { xs: 'none', sm: 'block' } }}
-            image={article?.image}
+            image="https://source.unsplash.com/random/?blog/"
             alt={article?.imageLabel}
           />
         </Card>
