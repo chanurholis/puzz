@@ -2,12 +2,10 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 
 import Header from '@components/Header';
-import MainFeaturedPost from '@components/MainFeaturedPost';
-import FeaturedPost from '@components/FeaturedPost';
-import ListArticle from '@components/ListArticle';
+import MainFeaturedPost from '@components/MainFeaturedArticle';
+import FeaturedPost from '@components/FeaturedArticle';
 import Footer from '@components/Footer';
 
-import articles from '@constants/articles.json';
 import sections from '@constants/sections.json';
 
 const mainFeaturedPost = {
@@ -50,9 +48,6 @@ const Blog = () => {
               <FeaturedPost key={post?.title} post={post} />
             ))}
           </Grid>
-          {/* <Grid container spacing={5} sx={{ mt: 3 }}>
-            <ListArticle header="Articles" articles={articles} />
-          </Grid> */}
         </main>
       </Container>
       <Footer
