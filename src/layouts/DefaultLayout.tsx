@@ -3,7 +3,7 @@ import Container from '@mui/material/Container';
 import Header from '@components/Header';
 import Footer from '@components/Footer';
 
-import sections from '@constants/sections.json';
+import { sections } from '@constants/dummy-data';
 import { ReactElement } from 'react';
 
 interface DefaultLayoutProps {
