@@ -1,29 +1,22 @@
 import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 
 import Article from '@components/Article';
 
-interface ListArticleProps {
-	header: string;
-	articles: any[];
-}
+import { ListArticleProps } from './types';
 
 const ListArticle = (props: ListArticleProps) => {
-	const { articles, header } = props;
+	const { articles } = props;
 
 	return (
 		<>
-			<Grid item xs={12} md={12}>
-				<Typography variant="h6" gutterBottom>
-					{header}
-				</Typography>
-				<Divider />
-				{articles.map((article) => (
-					<Grid item key={article?.header}>
-						<Article key={article?.header} article={article} />
-					</Grid>
-				))}
+			<Grid container spacing={5} sx={{ mt: 1 }}>
+				<Grid item xs={12} md={12}>
+					{articles.map((article) => (
+						<Grid item key={article?.header} sx={{ mb: 3 }}>
+							<Article key={article?.header} article={article} />
+						</Grid>
+					))}
+				</Grid>
 			</Grid>
 		</>
 	);
