@@ -5,19 +5,9 @@ import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 
-interface MainFeaturedArticleProps {
-  post: {
-    description: string;
-    image: string;
-    imageText: string;
-    linkText: string;
-    title: string;
-  };
-}
+import { MainFeaturedArticleProps } from './types';
 
-const MainFeaturedArticle = (props: MainFeaturedArticleProps) => {
-  const { post } = props;
-
+const MainFeaturedArticle = ({ article }: MainFeaturedArticleProps) => {
   return (
     <Paper
       sx={{
@@ -28,11 +18,11 @@ const MainFeaturedArticle = (props: MainFeaturedArticleProps) => {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-        backgroundImage: `url(${post.image})`,
+        backgroundImage: `url(${article?.image})`,
       }}
     >
       {/* Increase the priority of the hero background image */}
-      {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
+      {<img style={{ display: 'none' }} src={article?.image} alt={article?.imageText} />}
       <Box
         sx={{
           position: 'absolute',
@@ -53,13 +43,13 @@ const MainFeaturedArticle = (props: MainFeaturedArticleProps) => {
             }}
           >
             <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-              {post.title}
+              {article?.title}
             </Typography>
             <Typography variant="h5" color="inherit" paragraph>
-              {post.description}
+              {article?.description}
             </Typography>
             <Link variant="subtitle1" href="#">
-              {post.linkText}
+              {article?.linkText}
             </Link>
           </Box>
         </Grid>
